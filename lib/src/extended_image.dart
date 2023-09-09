@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:extended_image/src/border_painter.dart';
 import 'package:extended_image/src/gesture/gesture.dart';
 import 'package:extended_image/src/image/raw_image.dart';
@@ -1237,10 +1235,7 @@ class _ExtendedImageState extends State<ExtendedImage>
     });
 
     if (widget.clearMemoryCacheIfFailed) {
-      scheduleMicrotask(() {
-        widget.image.evict();
-        // PaintingBinding.instance.imageCache.evict(key);
-      });
+      widget.image.evict();
     }
   }
 
